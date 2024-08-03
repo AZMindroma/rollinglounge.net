@@ -119,7 +119,7 @@ export const headerData = {
 };
 
 export const footerData = {
-  links: [
+  /*links: [
     {
       title: 'Product',
       links: [
@@ -165,7 +165,7 @@ export const footerData = {
       ],
     },
   ],
-  /*secondaryLinks: [
+  secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],*/

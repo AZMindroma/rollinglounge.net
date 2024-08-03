@@ -115,7 +115,7 @@ export const headerData = {
       href: '#',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Rolling Lounge Wiki', href: 'https://rollinglounge.miraheze.org/', target: '_blank' }],
 };
 
 export const footerData = {

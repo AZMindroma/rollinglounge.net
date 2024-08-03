@@ -165,10 +165,10 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [
+  /*secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
+  ],*/
   socialLinks: [
     { ariaLabel: 'Discord', icon: 'tabler:brand-discord', href: 'https://discord.gg/bEZRMZQ' },
     { ariaLabel: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@rollinglounge' },

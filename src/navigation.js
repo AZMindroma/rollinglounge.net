@@ -2,6 +2,32 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
+      {
+        text: 'Guides',
+        links: [
+          {
+            text: 'Chinese TapTap Verification',
+            href: getPermalink('/guides/chinesetaptap'),
+          },
+        ],
+      },
+      {
+        text: 'FAQ',
+        links: [
+          {
+            text: 'Rolling Lounge',
+            href: getPermalink('/faq/rollinglounge'),
+          },
+          {
+            text: 'Rolling Sky Android',
+            href: getPermalink('/faq/rsandroid'),
+          },
+          {
+            text: 'Rolling Sky Fanmades',
+            href: getPermalink('/faq/rsfanmade'),
+          },
+        ],
+      },
     /*{
       text: 'Homes',
       links: [

@@ -20,11 +20,10 @@
   }
 
   .bg-custom {
-    background-image: url('/src/assets/images/SkyLounge.webp');
+    background-image: url('/src/assets/images/SkyLoungeDark.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    filter: brightness(50%);
   }
 }
 

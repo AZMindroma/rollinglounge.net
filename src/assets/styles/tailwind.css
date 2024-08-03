@@ -18,6 +18,13 @@
   .text-muted {
     color: var(--aw-color-text-muted);
   }
+
+  .bg-custom {
+    background-image: url('/src/assets/images/SkyLounge.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 @layer components {

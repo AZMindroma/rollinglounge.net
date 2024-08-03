@@ -86,8 +86,8 @@
 }
 
 .dark-theme-logo {
-  width: width;
-  height: height;
+  width: 400;
+  height: 400;
   background: url("~/assets/images/rl.png") center / cover;
 }
 

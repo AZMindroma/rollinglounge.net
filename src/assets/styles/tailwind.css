@@ -85,13 +85,6 @@
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
-.dark-theme-logo {
-  width: 400;
-  height: 400;
-  background: url("~/assets/images/rl.png") center;
-}
-
-
 /* To deprecated */
 
 .dd *:first-child {

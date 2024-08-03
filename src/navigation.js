@@ -2,7 +2,7 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    {
+    /*{
       text: 'Homes',
       links: [
         {
@@ -113,7 +113,7 @@ export const headerData = {
     {
       text: 'Widgets',
       href: '#',
-    },
+    },*/
   ],
   actions: [{ text: 'Rolling Lounge Wiki', href: 'https://rollinglounge.miraheze.org/', target: '_blank' }],
 };

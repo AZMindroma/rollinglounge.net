@@ -22,7 +22,8 @@ export interface Post {
   excerpt?: string;
   /**  */
   image?: ImageMetadata | string;
-
+  lightImage?: ImageMetadata | string;
+  darkImage?: ImageMetadata | string;
   /**  */
   category?: Taxonomy;
   /**  */
@@ -116,6 +117,8 @@ interface TeamMember {
   name?: string;
   job?: string;
   image?: Image;
+  lightImage?: Image;
+  darkImage?: Image;
   socials?: Array<Social>;
   description?: string;
   classes?: Record<string, string>;
@@ -139,6 +142,8 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
+  lightImage?: Image;
+  darkImage?: Image;
 }
 
 export interface Price {
@@ -159,6 +164,8 @@ export interface Testimonial {
   name?: string;
   job?: string;
   image?: string | unknown;
+  lightImage?: string | unknown;
+  darkImage?: string | unknown;
 }
 
 export interface Input {
@@ -217,6 +224,8 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown;
+  lightImage?: string | unknown;
+  darkImage?: string | unknown;
 }
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {

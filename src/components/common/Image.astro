@@ -9,7 +9,7 @@ import {
   type AttributesProps,
 } from '~/utils/images-optimization';
 
-type Props = ImageProps;
+type Props = ImageProps & { darkSrc?: string };
 type ImageType = {
   src: string;
   attributes: AttributesProps;
@@ -18,7 +18,7 @@ type ImageType = {
 const props = Astro.props;
 
 if (props.alt === undefined || props.alt === null) {
-  throw new Error();
+  throw new Error('The alt attribute is required.');
 }
 
 if (typeof props.width === 'string') {
@@ -37,8 +37,8 @@ if (!props.decoding) {
   props.decoding = 'async';
 }
 
+// Find the light image source
 const _image = await findImage(props.src);
-
 let image: ImageType | undefined = undefined;
 
 if (typeof _image === 'string') {
@@ -53,12 +53,35 @@ if (typeof _image === 'string') {
 } else if (_image) {
   image = await getImagesOptimized(_image, props, astroAsseetsOptimizer);
 }
+
+// Find the dark image source
+let darkImage: ImageType | undefined = undefined;
+if (props.darkSrc) {
+  const _darkImage = await findImage(props.darkSrc);
+  if (typeof _darkImage === 'string') {
+    if ((_darkImage.startsWith('http://') || _darkImage.startsWith('https://')) && isUnpicCompatible(_darkImage)) {
+      darkImage = await getImagesOptimized(_darkImage, props, unpicOptimizer);
+    } else {
+      darkImage = {
+        src: _darkImage,
+        attributes: { ...props, src: undefined },
+      };
+    }
+  } else if (_darkImage) {
+    darkImage = await getImagesOptimized(_darkImage, props, astroAsseetsOptimizer);
+  }
+}
 ---
 
-{
-  !image ? (
-    <Fragment />
-  ) : (
-    <img src={image.src} crossorigin="anonymous" referrerpolicy="no-referrer" {...image.attributes} />
-  )
-}
+{!image && !darkImage ? (
+  <Fragment />
+) : (
+  <>
+    {image && (
+      <img src={image.src} crossorigin="anonymous" referrerpolicy="no-referrer" {...image.attributes} class="dark:hidden" />
+    )}
+    {darkImage && (
+      <img src={darkImage.src} crossorigin="anonymous" referrerpolicy="no-referrer" {...darkImage.attributes} class="hidden dark:block" />
+    )}
+  </>
+)}

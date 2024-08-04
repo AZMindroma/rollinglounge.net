@@ -23,11 +23,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
-    margin: 0px;
-    top: 0;
-    padding: 0px;
-    min-height: 1vh; /* Ensure full viewport height */
+    min-height: 100vh; /* Ensure full viewport height */
   }
 
   .dark .bg-custom {

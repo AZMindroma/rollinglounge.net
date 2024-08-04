@@ -27,12 +27,11 @@
     margin: 0px;
     top: 0;
     padding: 0px;
-    background-image: url('/src/assets/images/SkyLoungeVeryDark.png');
   }
 
-  /*.dark .bg-custom {
-    
-  }*/
+  .dark .bg-custom {
+    background-image: url('/src/assets/images/SkyLoungeVeryDark.png');
+  }
 }
 
 @layer components {

@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: Rolling Lounge
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/SkyLoungeCropped.png'
+        width: 1536
+        height: 864
     type: website
   twitter:
     handle: '@onwidget'

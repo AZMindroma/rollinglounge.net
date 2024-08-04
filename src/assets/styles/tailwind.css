@@ -27,6 +27,7 @@
     margin: 0px;
     top: 0;
     padding: 0px;
+    min-height: 100vh; /* Ensure full viewport height */
   }
 
   .dark .bg-custom {

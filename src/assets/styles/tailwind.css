@@ -24,6 +24,9 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
+    margin: 0px;
+    top: 0;
+    padding: 0px;
   }
 
   .dark .bg-custom {

@@ -20,11 +20,13 @@
   }
 
   .bg-custom {
-    background-image: url('/src/assets/images/SkyLoungeVeryDark.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
+  }
+
+  .dark .bg-custom {
+    background-image: url('/src/assets/images/SkyLoungeVeryDark.png');
   }
 }
 

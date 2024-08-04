@@ -11,7 +11,7 @@ metadata:
   title:
     default: Rolling Lounge
     template: '%s — Rolling Lounge'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "The official website for Rolling Lounge, the biggest Rolling Sky community on Discord!"
   robots:
     index: true
     follow: true

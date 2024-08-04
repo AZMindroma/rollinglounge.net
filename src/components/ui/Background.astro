@@ -7,8 +7,17 @@ export interface Props {
 const { isDark = false, backgroundImage } = Astro.props;
 ---
 
-<div class:list={['fixed inset-0', { 'bg-dark dark:bg-transparent': isDark }]} style={`background-image: url(${backgroundImage}); background-size: cover; background-position: center; z-index: -1;`}>
+<div 
+  class:list={['fixed inset-0', { 'bg-dark dark:bg-transparent': isDark }]} 
+  style={`background-image: url(${backgroundImage}); background-size: cover; background-position: center; z-index: -1; transform: translateY(var(--scroll));`}>
 </div>
 <div class="relative z-10">
   <slot />
 </div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollValue = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    document.documentElement.style.setProperty('--scroll', `${scrollValue * 100}%`);
+  });
+</script>

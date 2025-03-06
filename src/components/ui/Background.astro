@@ -7,7 +7,7 @@ export interface Props {
 const { isDark = false, backgroundImage } = Astro.props;
 ---
 
-<div class:list={[{ 'dark': isDark }]} style={`background-image: url(${backgroundImage}); background-size: cover; background-position: center; z-index: -1;`}>
+<div class:list={[{ 'dark': isDark }]} style={`background-image: url('${backgroundImage}'); background-size: cover; background-position: center; z-index: -1;`}>
 </div>
 <div class="relative z-10">
   <slot />

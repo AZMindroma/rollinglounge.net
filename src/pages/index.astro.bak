@@ -1,7 +1,17 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+
 import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Background from '~/components/ui/Background.astro';
 
 const metadata = {
   title: 'Rolling Lounge',
@@ -10,36 +20,48 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <div class="min-h-center bg-cover bg-center dark:bg-[url('~/assets/images/SkyLoungeVeryDark.png')] bg-[url('~/assets/images/RollingLoungeAJRBanner.png')]">
+  <!-- Apply background styles directly to a div -->
+  <div
+    style={`
+      background-image: url('https://persistent.rollinglounge.net/assets/images/SkyLoungeVeryDark.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh; /* Ensure it covers the full viewport height */
+    `}
+  >
+    <!-- Hero Widget ******************* -->
+      <Hero
+        actions={[
+          {
+            variant: 'primary',
+            text: 'Join Rolling Lounge!',
+            href: 'https://discord.gg/bEZRMZQ',
+            target: '_blank',
+          },
+          { text: 'Learn more', href: '#contents' },
+        ]}
+        lightImage={{src: '~/assets/images/rldark.png', alt: 'Rolling Lounge Logo White'}}
+        darkImage={{src: '~/assets/images/rl.png', alt: 'Rolling Lounge Logo Black'}}
+      >
+        <Fragment slot="title">
+          <span class="text-accent dark:text-white highlight">Rolling Lounge</span>
+        </Fragment>
 
-    <!-- Hero Widget -->
-    <Hero
-      actions={[
-        {
-          variant: 'primary',
-          text: 'Join Rolling Lounge!',
-          href: 'https://discord.gg/bEZRMZQ',
-          target: '_blank',
-        },
-        { text: 'Learn more', href: '#contents' },
-      ]}
-      lightImage={{ src: '~/assets/images/rldark.png', alt: 'Rolling Lounge Logo White' }}
-      darkImage={{ src: '~/assets/images/rl.png', alt: 'Rolling Lounge Logo Black' }}
-    >
-      <Fragment slot="title">
-        <span class="text-accent dark:text-white highlight">Rolling Lounge</span>
-      </Fragment>
+        <Fragment slot="subtitle">
+          <span class="hidden sm:inline">
+            <span class="font-semibold">Rolling Lounge</span> is the biggest Rolling Sky community on Discord, featuring the latest Rolling Sky news, a variety of useful assets and contribution possibilities for Rolling Sky players, fanmades and more!
+          </span>
+          <span class="block mb-1 sm:hidden">The latest Rolling Sky news, useful assets, contribution possibilities, fanmades and more!</span>
+        </Fragment>
+      </Hero>
+    <!-- Note Widget ******************* -->
 
-      <Fragment slot="subtitle">
-        <span class="hidden sm:inline">
-          <span class="font-semibold">Rolling Lounge</span> is the biggest Rolling Sky community on Discord, featuring the latest Rolling Sky news, a variety of useful assets and contribution possibilities for Rolling Sky players, fanmades and more!
-        </span>
-        <span class="block mb-1 sm:hidden">The latest Rolling Sky news, useful assets, contribution possibilities, fanmades and more!</span>
-      </Fragment>
-    </Hero>
+    <!--  <Note />-->
+
     </div>
+    <!-- Features Widget *************** -->
 
-    <!-- Features Widget -->
     <Features
       id="contents"
       tagline="Contents"
